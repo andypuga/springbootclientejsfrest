@@ -22,7 +22,7 @@ import javax.validation.constraints.Size;
  * @author Programador3
  */
 @Entity
-@Table(name = "EGRESOS")
+@Table(name = "EGRESO")
 public class Egresos implements Serializable {
 
     private static final long serialVersionUID = 1L;

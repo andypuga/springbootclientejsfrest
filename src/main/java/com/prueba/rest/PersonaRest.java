@@ -15,24 +15,24 @@ import org.springframework.web.bind.annotation.RestController;
 import com.prueba.data.Persona;
 import com.prueba.repository.IPersona;
 
-@RestController
+@RestController("/persona")
 public class PersonaRest {
 	@Autowired
 	IPersona per;
 	
-	@RequestMapping("/verpersonas")
+	@RequestMapping("/lista")
 	public List<Persona>  allpersonas() {
 		
 		return per.findAll();
 	}
 	
-	@RequestMapping(value="/persona/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/uno/{id}",method=RequestMethod.GET)
 	public Persona  onepersona( @PathVariable Integer id) {
 		return per.findOne(id);
  
 	}
 	
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public void saveProduct(@RequestBody Persona persona){
         per.save(persona);
        
